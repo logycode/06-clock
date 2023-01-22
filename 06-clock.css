@@ -15,6 +15,52 @@ body {
   font-size: 2rem;
 }
 
+.analog {
+  width: 25vw;
+  aspect-ratio: 1;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+.center {
+  width: 5%;
+  aspect-ratio: 1;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.hand-seconds {
+  width: 50%;
+  right: 0;
+  position: absolute;
+  border: 1px solid red;
+}
+
+.hand-minutes {
+  width: 50%;
+  top: 25%;
+  position: absolute;
+  border: 3px solid blue;
+  transform: rotate(-90deg);
+}
+
+.hand-hours {
+  width: 25%;
+  right: 25%;
+  position: absolute;
+  border: 3px solid black;
+}
+
+.digital {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .colon-off {
   visibility: hidden;
 }
