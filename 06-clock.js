@@ -2,6 +2,8 @@ let hours = "";
 let minutes = "";
 let seconds = "";
 
+clockInit();
+
 setInterval(() => {
   const date = new Date();
   hours = "00" + date.getHours();
@@ -39,6 +41,17 @@ setInterval(() => {
   });
 }, 1000);
 
-const angle = (range, dimension) => {
+function angle(range, dimension) {
   return (360 / range) * dimension;
-};
+}
+
+function clockInit() {
+  console.log("init");
+
+  for (let i = 1; i <= 12; i++) {
+    const div = document.createElement("div");
+    div.classList.add("hour-indicators");
+    document.querySelector(".analog").appendChild(div);
+    div.style.transform = "rotate(" + angle(12, i) + "deg) translateX(790%)";
+  }
+}
