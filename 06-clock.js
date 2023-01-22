@@ -15,12 +15,21 @@ setInterval(() => {
 
   const hoursText = document.createTextNode(hours);
   document.querySelector(".hours").textContent = hoursText.textContent;
+  document
+    .querySelector(".hand-hours")
+    .style.setProperty("--hours", angle(12, hours) + "deg");
 
   const minutesText = document.createTextNode(minutes);
   document.querySelector(".minutes").textContent = minutesText.textContent;
+  document
+    .querySelector(".hand-minutes")
+    .style.setProperty("--minutes", angle(60, minutes) + "deg");
 
   const secondsText = document.createTextNode(seconds);
   document.querySelector(".seconds").textContent = secondsText.textContent;
+  document
+    .querySelector(".hand-seconds")
+    .style.setProperty("--seconds", angle(60, seconds) + "deg");
 }, 1000);
 
 // blinking separators
@@ -30,9 +39,6 @@ setInterval(() => {
   });
 }, 1000);
 
-// [x] add 0 in front of time digits and use substring (or similar) to always have a two digit display
-// todo [] add blinking colons
-
-/* ------- */
-
-// todo [] add analog clock by dynamically setting the angle of the hands so that they can be used with css {transform: rotate}
+const angle = (range, dimension) => {
+  return (360 / range) * dimension;
+};

@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --seconds: 0;
+  --minutes: 0;
+  --hours: 0;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -25,6 +31,7 @@ body {
   background-color: white;
   border: 3px solid black;
   border-radius: 50%;
+  filter: drop-shadow(0 2px 3px #454545);
 }
 
 .center {
@@ -34,26 +41,28 @@ body {
   border-radius: 50%;
 }
 
-.hand-seconds {
-  width: 50%;
-  right: 0;
+.hand-seconds,
+.hand-minutes,
+.hand-hours {
   position: absolute;
-  border: 1px solid red;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.hand-seconds {
+  height: 48%;
+  border-width: 1px;
+  transform: rotate(var(--seconds)) translateY(-50%);
 }
 
 .hand-minutes {
-  width: 50%;
-  top: 25%;
-  position: absolute;
-  border: 3px solid blue;
-  transform: rotate(-90deg);
+  height: 48%;
+  transform: rotate(var(--minutes)) translateY(-50%);
 }
 
 .hand-hours {
-  width: 25%;
-  right: 25%;
-  position: absolute;
-  border: 3px solid black;
+  height: 25%;
+  transform: rotate(var(--hours)) translateY(-50%);
 }
 
 .digital {
